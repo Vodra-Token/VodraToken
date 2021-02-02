@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
 
-contract Token {
+interface ERC20Token {
 
     /// @return total amount of tokens
     function totalSupply() external view returns (uint256);
@@ -37,7 +37,15 @@ contract Token {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 }
 
-contract StandardToken is Token {
+contract StandardToken is ERC20Token {
+
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
+    uint256 public totalSupply_;
+
+    function totalSupply() public override view returns (uint256) {
+        return totalSupply_;
+    }
 
     function balanceOf(address _owner) public override view returns (uint256) {
         return balances[_owner];
@@ -58,7 +66,7 @@ contract StandardToken is Token {
         return true;
     }
 
-    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+    function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
         // 0 check for _value?
         require(balances[_from] >= _value);
         require(allowed[_from][msg.sender] >= _value);
@@ -76,8 +84,4 @@ contract StandardToken is Token {
         emit Approval(msg.sender, _spender, _value);
         return true;
     }
-
-    mapping (address => uint256) balances;
-    mapping (address => mapping (address => uint256)) allowed;
-    uint256 public totalSupply;
 }

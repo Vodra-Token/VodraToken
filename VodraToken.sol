@@ -9,8 +9,8 @@ contract VodraToken is StandardToken {
     uint256 public constant totalTokens = 2 * (10**9) * 10**decimals;
     string public version = "1.0";
 
-    constructor() public {
-        totalSupply = totalTokens;
-        balances[msg.sender] = totalSupply;
+    constructor() {
+        totalSupply_ = totalTokens;
+        balances[msg.sender] = totalSupply_;
     }
 }
