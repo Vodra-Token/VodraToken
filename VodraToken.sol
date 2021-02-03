@@ -9,7 +9,7 @@ contract VodraToken is StandardToken {
     string public constant symbol = "VDR";
     uint8 public constant decimals = 18;
     uint256 public constant totalTokens = 2 * (10**9) * 10**decimals;
-    string public version = "1.0";
+    bytes32 public version = bytes32("1.0");
 
     constructor() {
         totalSupply_ = totalTokens;
