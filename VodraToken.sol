@@ -16,21 +16,23 @@ contract VodraToken is StandardToken {
         balances[msg.sender] = totalSupply_;
     }
 
-    function transferMultiple(address _from, address[] _toArray, uint256[] _valueArray) {
+    function transferMultiple(address[] memory _toArray, uint256[] memory _valueArray) public returns (bool) {
         require(_toArray.length == _valueArray.length);
 
         uint256 length = _toArray.length;
         for (uint i=0; i< length; i+=1) {
-            // Transfers from _from to current value in _toArray
+            require(transferInternal(_toArray[i], _valueArray[i]));
         }
+
+        return true;
     }
 
-    function transferFromMultiple(address _to, address[] _fromArray, uint256[] _valueArray) {
-        require(_fromArray.length == _valueArray.length);
+    // function transferFromMultiple(address _to, address[] _fromArray, uint256[] _valueArray) public returns (bool) {
+    //     require(_fromArray.length == _valueArray.length);
 
-        uint256 length = _fromArray.length;
-        for (uint i=0; i< length; i+=1) {
-            // Transfers from current value in _fromArray to _to
-        }
-    }
+    //     uint256 length = _fromArray.length;
+    //     for (uint i=0; i< length; i+=1) {
+    //         // Transfers from current value in _fromArray to _to
+    //     }
+    // }
 }

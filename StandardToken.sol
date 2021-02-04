@@ -21,6 +21,17 @@ contract StandardToken is ERC20Token {
     mapping (address => mapping (address => uint256)) allowed;
     uint256 public totalSupply_;
 
+    function transferInternal(address _to, uint256 _value) internal returns (bool) {
+        // 0 check for _value?
+        require(balances[msg.sender] >= _value);
+
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+
     function totalSupply() public override view returns (uint256) {
         return totalSupply_;
     }
@@ -34,17 +45,10 @@ contract StandardToken is ERC20Token {
     }
 
     function transfer(address _to, uint256 _value) public override returns (bool) {
-        // 0 check for _value?
-        require(balances[msg.sender] >= _value);
-
-        balances[msg.sender] -= _value;
-        balances[_to] += _value;
-
-        emit Transfer(msg.sender, _to, _value);
-        return true;
+        return transferInternal(_to, _value);
     }
 
-    function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
+    function transferFrom(address _from, address _to, uint256 _value) public override returns (bool) {
         // 0 check for _value?
         require(balances[_from] >= _value);
         require(allowed[_from][msg.sender] >= _value);
