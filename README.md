@@ -36,6 +36,9 @@ companies and their associated stock prices are bound to rise and fall
 unpredictably, the stable yet rapid growth of online audiences can now be
 directly invested in.
 
+### Features and Integrations
+
+
 ## Resources and Contact
 [https://vodra.io](https://vodra.io)
 
