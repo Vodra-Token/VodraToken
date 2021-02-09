@@ -16,17 +16,29 @@ contract VodraToken is StandardToken {
         balances[msg.sender] = totalSupply_;
     }
 
-    function transferMultiple(address[] memory _toArray, uint256[] memory _valueArray) public returns (bool) {
-        require(_toArray.length == _valueArray.length);
+    function creatorRedemptions(address[] memory _redemptionRecipients, uint[] memory _values) public returns (bool) {
+        require(_redemptionRecipients.length == _values.length);
 
-        uint256 length = _toArray.length;
-        for (uint i=0; i< length; i+=1) {
-            require(transferInternal(_toArray[i], _valueArray[i]));
+        uint256 senderBalance = balances[msg.sender];
+        uint256 length = _redemptionRecipients.length;
+        for (uint i = 0; i < length; i++) {
+            uint value = _values[i];
+            address recipient = _redemptionRecipients[i];
+
+            require(senderBalance >= value);
+            if (msg.sender != _redemptionRecipients[i]) {
+                senderBalance -= value;
+                balances[recipient] += value;
+            }
+
+            emit Transfer(msg.sender, recipient, value);
         }
 
+        balances[msg.sender] = senderBalance;
         return true;
     }
 
+    // Will require approval functions from individual senders
     // function transferFromMultiple(address _to, address[] _fromArray, uint256[] _valueArray) public returns (bool) {
     //     require(_fromArray.length == _valueArray.length);
 
