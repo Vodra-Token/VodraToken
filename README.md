@@ -1,4 +1,5 @@
 # Vodra - Crypto Meets Content
+![Logo](https://github.com/ZacharyBys/VodraToken/blob/master/assets/VodraLogo.png "Logo")
 ## Problem
 ### Free and Unfettered Media
 The vast majority of free online entertainment is supported through advertising,
@@ -27,16 +28,25 @@ their audiences and any others who believe in free and open media to benefit
 from its growth. Vodra is a decentralized digital currency, or cryptocurrency,
 that fully represents and supports content creators and their audiences. With a
 representative free-market value for creators’ audience sizes, equitable
-compensation can be demanded for advertisements, product placements or
-promotions. Those who consume and enjoy free online media can also support
-the medium by using Vodra to purchase merchandise or donate to a creator.
+compensation can be achieved. Those who consume and enjoy free online media can support
+the medium by using Vodra to donate to a creator, or to vote on and contribute to upcoming projects.
 Even those who do not consume free online media but recognize the growth
 potential can utilize Vodra as a powerful investment tool. While certain media
 companies and their associated stock prices are bound to rise and fall
 unpredictably, the stable yet rapid growth of online audiences can now be
 directly invested in.
 
-### Features and Integrations
+## Token Redemption
+Vodra is a simple ERC-20 token, that is redeemed based on content creator audience sizes. Vodra is redeemed at a diminishing rate, allowing for our the fixed supply of tokens to last while the community grows, and ensuring that those who participate early in Vodra’s growth will be rewarded at a higher rate.
+
+## Uses
+The token itself is designed to be simple, and usable in any wallet that accepts Ethereum. Many of the core uses of the token will be implemented on our website, which hosts the Creator Program.
+
+Vodra is the perfect solution to directly support content creators without requiring a third party. Most entertainment streaming platforms allow viewers to donate to broadcasters, but they take a massive cut. Vodra keeps the transactions between viewers and creators on their own terms. Vodra will be used for direct donations, as well as integrations with popular broadcasting software.
+
+The Creator Program on our website will host user profiles, and act as an index for content creators "social media footprint". Audience members will be able to vote on and contribute to upcoming projects from their favorite content creators using Vodra.
+
+Using its unique redemption process, and interactions between audience members and content creators, Vodra aims to put a fair value on the worth of an audience member. This allows users to invest in the growth of online entertainement, without targeting any specific platform.
 
 
 ## Resources and Contact
