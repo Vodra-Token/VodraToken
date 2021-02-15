@@ -5,17 +5,6 @@ import "./StandardToken.sol";
 
 contract VodraToken is StandardToken {
 
-    uint8 public constant decimals = 18;
-    uint8 public constant version = 1;
-    string public constant name = "Vodra";
-    string public constant symbol = "VDR";
-    uint256 public constant totalTokens = 2 * (10**9) * 10**decimals;
-
-    constructor() {
-        totalSupply_ = totalTokens;
-        balances[msg.sender] = totalSupply_;
-    }
-
     function creatorRedemptions(address[] memory _redemptionRecipients, uint[] memory _values) public returns (bool) {
         require(_redemptionRecipients.length == _values.length);
 
