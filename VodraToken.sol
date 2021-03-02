@@ -8,6 +8,6 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.0
 contract VodraToken is ERC20 {
 
     constructor () public ERC20("Vodra", "VDR", 18) {
-        _mint(msg.sender, 2 * (10**9) * (10 ** uint256(decimals()));
+        _mint(msg.sender, 2 * (10**9) * (10 ** uint256(decimals())));
     }
 }
