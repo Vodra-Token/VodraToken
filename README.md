@@ -1,5 +1,7 @@
 # Vodra - Crypto Meets Content
 ![Logo](https://github.com/ZacharyBys/VodraToken/blob/master/assets/VodraLogo.png "Logo")
+
+[**Smart Contract Audit** (98% Security Score)](https://www.bitriseaudits.com/project/95) 
 ## Problem
 ### Free and Unfettered Media
 The vast majority of free online entertainment is supported through advertising,
